@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Tag</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Select an HTML tag to scrape:</h2>
+        <form method="post" action="/scrape">
+            <input type="hidden" name="url" value="{{ url }}">
+            <select name="tag">
+                {% for tag in tags %}
+                    <option value="{{ tag }}">{{ tag }} — {{ samples[tag][:40] }}{% if samples[tag]|length > 40 %}...{% endif %}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Scrape</button>
+        </form>
+    </div>
+</body>
+</html>

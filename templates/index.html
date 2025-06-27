@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TagHunter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>What would you like to scrape today?</h2>
+        <p>Enter a URL and we’ll detect the HTML elements you can extract.</p>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+
+        <form method="post">
+            <input type="text" name="url" placeholder="e.g. https://example.com" required>
+            <small>Make sure the page is publicly accessible.</small>
+            <button type="submit">Analyze</button>
+        </form>
+    </div>
+</body>
+</html>

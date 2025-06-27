@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scraped Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Scraped content for tag: {{ tag }}</h2>
+
+        {% if content %}
+            <button onclick="copyToClipboard()">📋 Copy All</button>
+            <a href="{{ url_for('download_txt', tag=tag) }}" style="margin-left:10px;">⬇️ Download as .txt</a>
+            <ul>
+                {% for item in content %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No content found for this tag.</p>
+        {% endif %}
+    </div>
+
+    <script>
+    function copyToClipboard() {
+        const text = Array.from(document.querySelectorAll('li')).map(li => li.textContent).join("\n");
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Content copied to clipboard!");
+        });
+    }
+    </script>
+</body>
+</html>
