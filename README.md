@@ -1,6 +1,6 @@
-# 🕷️ TagHunter
+# 🕷️ TagHunter (Flask web App)
 
-**TagHunter** is a minimalist web scraping tool built with Flask, Selenium, and BeautifulSoup. It allows users to input any publicly accessible URL, automatically detect all HTML tags on the page, and select which tag's content to extract.
+**Tag Hunter** is a minimalist web scraping tool built with Flask, Selenium, and BeautifulSoup. It allows users to input any publicly accessible URL, automatically detect all HTML tags on the page, and select which tag's content to extract.
 
 ---
 
