@@ -15,12 +15,6 @@
 
 ---
 
-## 📸 Screenshots
-
-> *Coming soon...*
-
----
-
 ## 🧰 Built With
 
 * [Python](https://www.python.org/)
